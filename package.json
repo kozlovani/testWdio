@@ -1,0 +1,41 @@
+{
+  "name": "testwdio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "node-inspector": "node-inspector --debug-port 5859 --no-preload",
+    "selenium-postinstall": "node node_modules/.bin/selenium-standalone install",
+    "selenium-start": "node_modules/.bin/selenium-standalone start",
+    "test": "node node_modules/webdriverio/bin/wdio ./test/config/suite.cucumber.conf.js",
+    "allure-report": "node_modules/.bin/allure generate ./test/reports/allure-results -c && allure open"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.5.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "cucumber": "^3.0.0",
+    "url": "^0.11.0",
+    "wdio-allure-reporter": "^0.6.0",
+    "webdriverio": "^4.8.0"
+  },
+  "devDependencies": {
+    "selenium-standalone": "^6.8.0",
+    "wdio-cucumber-framework": "^1.0.2",
+    "wdio-selenium-standalone-service": "^0.0.10"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  }
+}
