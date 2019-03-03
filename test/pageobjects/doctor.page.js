@@ -10,9 +10,6 @@ class docdoc extends Page {
     get selectedElementInFilterList () { return $('.select-box__options-item-active-icon + span') }
     get tomorrowInFiletrList () {return $('//span[contains(., "Завтра")]/parent::button')}
     get doctorListFromPage () {return $$('//div[@class="doctor-card-name"]/a[contains(@data-test-id,"doctor_list_item")]')}
-    /*et doctorListFromWindow () { return browser.execute(function() {
-        return window['doctorList']
-    }).value}*/
         /**
      * define or overwrite page methods
      */
@@ -50,9 +47,6 @@ class docdoc extends Page {
             });
         }).value;
         return result;
-        //return browser.window()
-        //return this.doctorListFromWindow
-
     }
 }
 
