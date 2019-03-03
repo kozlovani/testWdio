@@ -25,5 +25,5 @@ When(/^Нажимаем на пункт "([^"]*)" в выпадающем спи
     doctor.selectTomorrowInFilterList();
 });
 Then(/^Отображаются врачи, работающие в выбранный день$/, function () {
-    // Write code here that turns the phrase above into concrete actions
+    expect(JSON.stringify(doctor.getDoctorListFromPage())==JSON.stringify(doctor.getDoctorListFromWindow())).to.equals(true, "Список врачей отличается от списка doctorList")
 });
